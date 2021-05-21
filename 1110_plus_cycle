@@ -1,0 +1,26 @@
+num=int(input())
+cycle = 0
+if 0<num<10:
+  num*=10
+elif num == 0:
+  print(1)
+n = num
+while num>=1:
+  n = str(n)
+  m = int(n[0]) + int(n[1])
+ 
+  if m<10:
+    m = str("0"+str(m))
+  else:
+    m = str(m)
+  n = n[1] + m[len(m)-1] 
+  print(n)
+  cycle += 1
+  print(cycle)
+  if int(n) == num:
+    print(cycle)
+    break
+
+
+  
+
