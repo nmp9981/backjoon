@@ -1,0 +1,14 @@
+#9개의 자연수중 최대값과 그 위치
+li=[]
+for i in range(0,9):
+  k=int(input())
+  li.append(k)
+
+maxi = li[0]
+maxi_num = 0
+for i in range(1,9):
+  if li[i] > maxi:
+    maxi = li[i]
+    maxi_num = i
+print(maxi)
+print(maxi_num+1)#리스트는 0번부터시작
