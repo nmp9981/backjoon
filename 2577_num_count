@@ -1,0 +1,17 @@
+#n = abc
+a=int(input())
+b=int(input())
+c=int(input())
+n=a*b*2c
+n=str(n)
+
+#0~9까지의 각각의 수가 있는가
+li = [0,0,0,0,0,0,0,0,0,0]
+for i in range(0,len(n)):
+  for j in range(0,10):
+    if int(n[i]) == j:
+      li[j] += 1
+
+#출력
+for i in range(0,10):
+  print(li[i])
