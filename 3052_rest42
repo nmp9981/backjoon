@@ -1,0 +1,17 @@
+li = []
+#42로 나눈 나머지
+for i in range(0,10):
+  n=int(input())
+  n42 = n%42
+  li.append(n42)
+
+count = 10
+li = sorted(li)#리스트 정렬
+
+#이전 성분과 비교해서 같으면 -1
+for i in range(1,10):
+  if li[i] == li[i-1]:
+    count -= 1
+
+#결과 출력
+print(count)
