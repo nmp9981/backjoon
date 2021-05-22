@@ -1,0 +1,13 @@
+#시험본 과목의 개수
+n=int(input())
+
+#가로로 점수 입력
+data = map(int,input().split())
+data = list(data)
+
+#새로운 평균 구하기
+if len(data) == n:
+  av = sum(data)/len(data)
+  max_score = max(data)
+  new_av = 100*av/max_score
+  print(new_av)
