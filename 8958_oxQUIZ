@@ -1,0 +1,27 @@
+#ox퀴즈
+#점수계산
+def ox_score(ox):
+  score = 0
+  i=1
+  #o면 점수를 더하고 x면 증가점수를 초기화
+  for j in range(0,len(ox)):
+    if ox[j] == "O":
+      score += i
+      i += 1
+    elif ox[j] == "X":
+      i = 1
+  return score
+
+#n 입력
+n=int(input())
+ox_li = []
+
+#점수 입력
+for i in range(0,n):
+  ox = input()
+  ox_li.append(ox)
+
+#점수 출력
+for k in range(0,len(ox_li)):
+  result = ox_score(ox_li[k])
+  print(result)
