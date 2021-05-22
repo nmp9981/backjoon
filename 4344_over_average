@@ -1,0 +1,26 @@
+#테스트 개수
+c=int(input())
+
+#평균 이상의 비율
+def over_av(k):
+  av = (sum(k) - k[0])/(len(k)-1)
+  count = 0
+  for i in range(1,len(k)):
+    if k[i] > av:
+      count += 1
+  pert = 100 * count / (len(k)-1)
+  pert = format(pert, ".3f")#소수점 3자리까지 출력
+  return pert
+
+li = []
+for i in range(0,c):
+  k = list(map(int,input().split()))#가로로 입력
+  if k[0] == len(k)-1:
+    pert = over_av(k)
+    li.append(pert)
+  else:
+    break
+
+#정답 출력
+for i in range(0,c):
+  print(str(li[i])+"%")#%와 값사이 공백이 안생기도록
