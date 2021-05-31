@@ -1,0 +1,14 @@
+#보물
+def mini(li1, li2, n):
+  li1.sort()#오름차순정렬
+  li3 = sorted(li2)#내림차순 정렬로 다룬다
+  sum = 0
+  for i in range(0, n):#큰수에는 작은수를 작은수에는 큰수를 곱해준다
+    sum += li1[i] * li3[n-i-1]
+  print(sum)
+
+#입력
+n = int(input())
+li1 = list(map(int, input().split()))
+li2 = list(map(int, input().split()))
+mini(li1,li2,n)
