@@ -1,0 +1,18 @@
+import math
+#필요한 세트개수
+def room(n):
+  li = [0 for i in range(9)]#각 숫자의 개수
+  for i in n:
+    num = int(i)
+    li[num]  = li[num] + 1
+  
+  #6일경우
+  li[6] = int(math.ceil(li[6] / 2))
+  
+  #출력
+  print(max(li))
+
+#입력
+n = input()
+n = n.replace('9','6')#9,6은 같이 사용가능
+room(n)
