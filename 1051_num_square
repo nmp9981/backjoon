@@ -1,0 +1,22 @@
+#숫자 정사각형
+def sq(li,n,m):
+  max_result = 1#기본값
+  for i in range(n-1):
+    for j in range(m-1):
+      size = 1 #기본 크기
+      while i + size < n and j + size < m:
+        #(i,j)를 기준점으로 삼고 사이즈를 늘려가면서 탐색
+        if li[i][j] == li[i+size][j+size] == li[i][j+size] == li[i+size][j]:
+          result = (size + 1)**2#정사각형 사이즈
+          if max_result < result:#최대값갱신
+            max_result = result
+        size += 1 #사이즈를 1씩 늘려가면서 탐색
+  print(max_result)
+
+#입력
+n,m = map(int,input().split())
+li = []
+for i in range(n):
+  num = input()
+  li.append(list(int(j) for j in str(num)))#문자열을 리스트로 입력받기
+sq(li,n,m)
