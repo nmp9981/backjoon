@@ -1,0 +1,23 @@
+#입력
+a,p = map(int, input().split())
+d = [0]*399999
+i = 0 #현재 숫자
+count = 0 #반복되지 않은 숫자의 개수
+d[a] = 1 #인덱스로 숫자를 받고 d[i]로 개수를 받음
+
+#반복수열
+while True:
+  sum = 0
+  i = str(a)
+  for j in range(len(i)):
+    sum += int(i[j]) ** p
+  d[sum] += 1 #인덱스로 값 저장
+  a = sum
+
+  #종료조건
+  if d[sum] == 3: #2로 해버리면 반복구간도 1이 되므로 부적절
+    for i in d:
+      if i == 1:
+        count += 1
+    print(count)
+    break
